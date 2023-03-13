@@ -1,0 +1,11 @@
+#!/bin/bash
+count=0
+for dir in $(find . -mindepth 1 -maxdepth 1 -type d)
+do
+  ((count++))
+  for sub_dir in $(find "$dir" -type d)
+  do
+    ((count++))
+  done
+done
+echo "Total number of directories and sub-directories: $count"
