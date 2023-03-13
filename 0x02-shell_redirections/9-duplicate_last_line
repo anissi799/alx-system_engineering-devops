@@ -1,5 +1,3 @@
 #!/bin/bash
-file="./iacta"
-last_line=$(tail -n1 "$file")
-echo "$last_line" >> "$file"
-echo "Last line duplicated."
+last_line=$(tail -n1 iacta)
+echo "$last_line" >> iacta

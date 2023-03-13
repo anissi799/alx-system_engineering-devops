@@ -1,4 +1,5 @@
 #!/bin/bash
-filename="ls_cwd_content"
-ls -la > "$filename"
-echo "ls -la output written to $filename"
+if [ -f ls_cwd_content ]; then
+    rm ls_cwd_content
+fi
+ls -la > ls_cwd_content
