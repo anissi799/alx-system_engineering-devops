@@ -1,0 +1,4 @@
+#!/bin/bash
+echo $(set -o posix ; set | grep -v -E 'BASH_(ARGC|ARGV|EXEC|PID|RANDOM|SOURCE|VERSINFO|VI|_CLEAR|_COMPLETE|_DIRSTACK|_E|_L|_ON|_OPT|_P|_S|_UNSET)' | awk -F= '{print $1}')
+echo $(printenv | awk -F= '{print $1}')
+echo $(declare -F | awk '{print $3}')
