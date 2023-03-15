@@ -1,2 +1,12 @@
 #!/bin/bash
-result=$(echo "ibase=2; $BINARY" | bc)
+binary=$BINARY
+decimal=0
+power=1
+while [ $binary -gt 0 ]
+do
+  bit=$(( binary % 10 ))
+  decimal=$(( decimal + bit * power ))
+  power=$(( power * 2 ))
+  binary=$(( binary / 10 ))
+done
+echo $decimal
